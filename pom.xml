@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.ericsson.oss.pmic</groupId>
+        <artifactId>pmic-integration</artifactId>
+        <version>3.1.120</version>
+    </parent>
+
+    <groupId>com.ericsson.oss.mediation.pm.handlers</groupId>
+    <artifactId>o1-pm-handlers-code</artifactId>
+    <version>1.0.5-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>[${project.artifactId}] JEE8 Project</name>
+
+    <properties>
+        <version.jboss-eap>7.4.11.GA</version.jboss-eap>
+        <version.service.framework>4.65.1</version.service.framework>
+        <version.maven-plugin>3.2.1</version.maven-plugin>
+        <ericsson.scm.url>scm:git:[fetch=]ssh://gerrit-gamma-read.seli.gic.ericsson.se:29418/OSS/ENM-Parent/SQ-Gate/com.ericsson.oss.mediation.pm.handlers/o1-pm-handlers-code[push=]ssh://gerrit-gamma.gic.ericsson.se:29418/OSS/ENM-Parent/SQ-Gate/com.ericsson.oss.mediation.pm.handlers/o1-pm-handlers-code</ericsson.scm.url>
+    </properties>
+
+    <modules>
+        <module>o1-pm-handlers-code-ear</module>
+        <module>o1-pm-handlers-code-ejb</module>
+        <module>ERICo1pmhandlerscode_CXP9044246</module>
+    </modules>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- JBOSS EAP -->
+            <dependency>
+                <groupId>org.jboss.bom</groupId>
+                <artifactId>jboss-eap-jakartaee8</artifactId>
+                <version>${version.jboss-eap}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.jboss.bom</groupId>
+                <artifactId>eap-runtime-artifacts</artifactId>
+                <version>${version.jboss-eap}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <scm>
+        <developerConnection>${ericsson.scm.url}</developerConnection>
+        <connection>${ericsson.scm.url}</connection>
+        <tag>HEAD</tag>
+    </scm>
+</project>
